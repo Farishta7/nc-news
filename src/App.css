@@ -6,6 +6,7 @@
   max-width: 200px; 
   border-radius: 8px;
   box-shadow: 10px 10px 5px #41505a;
+  
 }
 
 .single-article-image {
@@ -13,7 +14,9 @@
   border-radius: 6px;
 }
 
-@media only screen and (min-width: 600px) {
+
+
+@media only screen and (min-width: 200px) {
   .articles-list {
     display: flex;
     flex-wrap: wrap;
@@ -21,13 +24,14 @@
     align-items: center;
     list-style-type: none;
   }
-  .each-item {
+  .each-article {
     color: black;
     margin-top: 1rem;
     margin-bottom: 1rem;
     /* background: #81a1b7; */
     padding: 1.5rem;
     border-radius: 15px;
+    list-style-type: none;
   }
 }
 
@@ -49,10 +53,38 @@ a:visited {
   margin-left: 2rem;
   margin-right: 2rem;
   text-align: left;
+  width: 70rem;
 }
+
 
 
 .article-title {
   width: 200px;
+  list-style-type: none;
 
+
+}
+
+.each-comment {
+  list-style-type: none;
+  text-align: left;
+}
+
+.comment-image {
+  /* display: inline-block; */
+  border-radius: 50%;
+  overflow: hidden;
+  width: 50px;
+  height: 50px;
+  text-align: left;
+}
+
+.comment-author {
+  color: blue;
+
+}
+
+.comment-body {
+  margin-right: 2rem;
+  width: 50rem;
 }
