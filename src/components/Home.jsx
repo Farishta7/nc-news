@@ -1,10 +1,11 @@
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getArticles } from "../utils/api";
 
-const Home = () => {
+const Home = (props) => {
+    const {isLoading, setIsloading} = props;
     const [articles, setArticles] = useState([]);
-    const [isLoading, setIsloading] = useState(true);
-
+ 
     useEffect(() => {
         setIsloading(true);
 
@@ -15,7 +16,7 @@ const Home = () => {
         })
     }, [])
 
-    if (isLoading) return <p>Hang in there! Articles are loading...</p>
+    if (isLoading) return <p>Hang in there! Loading...</p>
 
     return (
     <div>
@@ -25,9 +26,11 @@ const Home = () => {
         {articles.map((item) => {
           return (
             <li key={item.article_id} className="each-item" >
+              <Link to={`/articles/${item.article_id}` }>
               <img src={item.article_img_url} className="images" alt="I am an alt."/>
-              <p>{item.topic}</p>
-              <p>{item.title}</p>
+              <p>{item.topic.charAt(0).toUpperCase() + item.topic.slice(1)}</p>
+              <p className="article-title">{item.title}</p>
+              </Link>
               <p>Author: {item.author}</p>
               <p>Date posted: {new Date(item.created_at).toLocaleString().split(',')[0]}</p>
             </li>
