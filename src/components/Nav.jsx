@@ -7,7 +7,7 @@ const Nav = () => {
         All Articles
       </Link>
       {" | "}
-      <Link to="/football">
+      <Link to="/topics">
         All Topics
       </Link>
     </nav>
