@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getArticles } from "../utils/api";
 
-const Home = (props) => {
-    const {isLoading, setIsloading} = props;
+const Home = () => {
+    const [isLoading, setIsloading] = useState(true);
     const [articles, setArticles] = useState([]);
  
     useEffect(() => {
@@ -25,7 +25,7 @@ const Home = (props) => {
         <ul className="articles-list">
         {articles.map((item) => {
           return (
-            <li key={item.article_id} className="each-item" >
+            <li key={item.article_id} className="each-article" >
               <Link to={`/articles/${item.article_id}` }>
               <img src={item.article_img_url} className="images" alt="I am an alt."/>
               <p>{item.topic.charAt(0).toUpperCase() + item.topic.slice(1)}</p>

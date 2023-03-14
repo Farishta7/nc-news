@@ -1,10 +1,10 @@
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import { getSingleArticle } from "../utils/api";
+import ArticleComments from '../components/ArticleComments'
 
-
-const SingleArticle = (props) => {
-    const {isLoading, setIsloading} = props
+const SingleArticle = () => {
+    const [isLoading, setIsloading] = useState(true);
     const {article_id} = useParams();
     const [singleArticle, setSingleArticle] = useState('')
 
@@ -12,8 +12,8 @@ const SingleArticle = (props) => {
         setIsloading(true);
 
         getSingleArticle(article_id)
-        .then((data) => {
-            setSingleArticle(data);
+        .then((response) => {
+            setSingleArticle(response);
             setIsloading(false);
         })
     }, [article_id]);
@@ -28,6 +28,8 @@ const SingleArticle = (props) => {
             <p>Author: {singleArticle.author}</p>
             <p>Date posted: {new Date(singleArticle.created_at).toLocaleString().split(',')[0]}</p>
             <p className="article-body">{singleArticle.body}</p>
+            <ArticleComments />
+            
         </>
         )
   };
