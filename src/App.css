@@ -8,6 +8,11 @@
   box-shadow: 10px 10px 5px #41505a;
 }
 
+.single-article-image {
+  max-width: 200px; 
+  border-radius: 6px;
+}
+
 @media only screen and (min-width: 600px) {
   .articles-list {
     display: flex;
@@ -24,4 +29,30 @@
     padding: 1.5rem;
     border-radius: 15px;
   }
+}
+
+/* .link {
+    text-decoration: none;
+} */
+
+a:link {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+.article-body {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  text-align: left;
+}
+
+
+.article-title {
+  width: 200px;
+
 }
