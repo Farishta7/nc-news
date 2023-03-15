@@ -19,27 +19,39 @@ const SingleArticle = () => {
         })
     }, [article_id]);
 
-    const upVote = (article_id) => {
+    const upVote = () => {
         setIsVotingError(false);
 
+        setSingleArticle((singleArticle) => {
+            return {...singleArticle, votes: singleArticle.votes + 1}
+        })
+
         ArticleUpVote(article_id)
-        .then((response) => {
-            setSingleArticle(response);
+        .then(() => {
         })
         .catch((err) => {
             setIsVotingError(true);
+            setSingleArticle((singleArticle) => {
+                return {...singleArticle, votes: singleArticle.votes - 1}
+            })
         })
     }
 
     const downVote = (article_id) => {
         setIsVotingError(false);
 
+        setSingleArticle((singleArticle) => {
+            return {...singleArticle, votes: singleArticle.votes - 1}
+        })
+
         ArticleDownVote(article_id)
-        .then((response) => {
-            setSingleArticle(response);
+        .then(() => {
         })
         .catch((err) => {
             setIsVotingError(true);
+            setSingleArticle((singleArticle) => {
+                return {...singleArticle, votes: singleArticle.votes + 1}
+            })
         })
     }
 
@@ -55,7 +67,9 @@ const SingleArticle = () => {
             <button onClick={() => upVote(singleArticle.article_id)}>
                 <span aria-label="up vote for this article">👍</span>
             </button>
+
             <p>{singleArticle.votes}</p>
+
             <button onClick={() => downVote(singleArticle.article_id)}>
                 <span aria-label="down vote for this article">👎</span>
             </button>
