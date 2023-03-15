@@ -25,3 +25,19 @@ export const getComments = (article_id) => {
         return response.data.articleComments;
     })
 }
+
+export const ArticleUpVote = (article_id) => {
+    return ncnewsApi
+    .patch(`/articles/${article_id}`, {inc_votes: 1})
+    .then((response) => {
+        return response.data.votes;
+    })
+}
+
+export const ArticleDownVote = (article_id) => {
+    return ncnewsApi
+    .patch(`/articles/${article_id}`, {inc_votes: -1})
+    .then((response) => {
+        return response.data.votes;
+    })
+}
