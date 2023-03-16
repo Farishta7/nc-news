@@ -5,9 +5,8 @@ import Home from "./components/Home";
 import SingleArticle from './components/SingleArticle';
 import {Route, Routes} from 'react-router-dom';
 import TopicsList from './components/TopicsList';
-import AllFootballArticles from './components/AllFootballArticles';
-import AllCodingArticles from './components/AllCodingArticles';
-import AllCookingArticles from './components/AllCookingArticles';
+import EachTopicArticles from './components/EachTopicArticles';
+
 
 function App() {  
   return (
@@ -18,9 +17,8 @@ function App() {
         <Route path='/' element={<Home />}/>
         <Route path='/articles/:article_id' element={<SingleArticle  />}/>
         <Route path='/topics' element={<TopicsList />}/>
-        <Route path='/topics/football' element={<AllFootballArticles />}/>
-        <Route path='/topics/coding' element={<AllCodingArticles />}/>
-        <Route path='/topics/cooking' element={<AllCookingArticles />}/>
+        <Route path='/topics/:topic' element={<EachTopicArticles />}/>
+
       </Routes>
     
     </div>
