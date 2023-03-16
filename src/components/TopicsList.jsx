@@ -5,7 +5,7 @@ const TopicsList = () => {
         <div>
             <p style={{margin: "3rem"}}>Please select a topic to read articles about:</p>
             <div className="all-topics-images">
-                <Link to={'/topics/football'}>
+                <Link to={'/topics/football'} >
                     <img src="https://m.media-amazon.com/images/I/71wh6WUTXxL.jpg" alt="I am an alt" className="each-topic-image" />
                 </Link>
                 <Link to={'/topics/coding'}>
