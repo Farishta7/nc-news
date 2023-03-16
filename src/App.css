@@ -1,5 +1,4 @@
 .App {
-  /* text-align: center; */
   background-color: rgb(231, 241, 244);
 }
 
@@ -31,8 +30,6 @@
   margin-left: auto;
   margin-right: auto;
 }
-
-
 
 @media only screen and (min-width: 200px) {
   .articles-list {
@@ -73,15 +70,6 @@
   }
 }
 
-
-/* .each-comment {
-  list-style-type: none;
-  text-align: left;
-} */
-/* .link {
-    text-decoration: none;
-} */
-
 a:link {
   text-decoration: none;
   color: inherit;
@@ -99,18 +87,12 @@ a:visited {
 }
 
 
-
 .article-title {
   width: 200px;
   list-style-type: none;
-
-
 }
 
-
-
 .comment-image {
-  /* display: inline-block; */
   border-radius: 50%;
   overflow: hidden;
   width: 50px;
@@ -152,25 +134,6 @@ a:visited {
 .home-page-header {
   margin-left: 3rem;
 }
-
-/* .all-topics-images { */
-  /* max-width: 400px; 
-  align-items: center; */
-  /* border-radius: 8px;
-  box-shadow: 10px 10px 5px #41505a; */
-
-  /* display:inline;
-  margin-left: auto;
-  margin-right: auto;
-  width: 20%;
-  padding-left: 4rem;
-  height: 15em; */
-
-  /* display: inline-block;
-  width: 20%;
-  height: 15em;
-  padding-left: 4rem; */
-/* } */
 
 @media only screen and (min-width: 200px) {
   .all-topics-images {
