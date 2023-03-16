@@ -41,3 +41,11 @@ export const ArticleDownVote = (article_id) => {
         return response.data.votes;
     })
 }
+
+export const postComment = (article_id, newComment) => {
+    return ncnewsApi
+    .post(`/articles/${article_id}/comments`, {username: "happyamy2016", body: newComment})
+    .then((response) => {
+        return response.data.comment;
+    })
+}

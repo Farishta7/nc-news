@@ -60,10 +60,12 @@ const SingleArticle = () => {
     return (
         <>
             <h3 >{singleArticle.title}</h3>
-            <br></br>
+            <section className="single-article-author-date">
             <img src={singleArticle.article_img_url} className="single-article-image" alt="I am an alt."/>
-            <p>Author: {singleArticle.author}</p>
-            <p>Date posted: {new Date(singleArticle.created_at).toLocaleString().split(',')[0]}</p>
+            
+                <p>Author: {singleArticle.author}</p>
+                <p>Date posted: {new Date(singleArticle.created_at).toLocaleString().split(',')[0]}</p>
+            
             <button onClick={() => upVote(singleArticle.article_id)}>
                 <span aria-label="up vote for this article">👍</span>
             </button>
@@ -73,6 +75,7 @@ const SingleArticle = () => {
             <button onClick={() => downVote(singleArticle.article_id)}>
                 <span aria-label="down vote for this article">👎</span>
             </button>
+            </section>
             {isVotingError && <p>Your vote was NOT processed!</p>}
             <p className="article-body">{singleArticle.body}</p>
             <ArticleComments />

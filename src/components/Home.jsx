@@ -20,7 +20,7 @@ const Home = () => {
 
     return (
     <div>
-        <h2>Here are all articles about football, coding and cooking:</h2>
+        <h2 className="home-page-header">Here are all articles about football, coding and cooking:</h2>
         <p>{isLoading}</p>
         <ul className="articles-list">
         {articles.map((item) => {
