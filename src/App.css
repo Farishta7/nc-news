@@ -3,6 +3,7 @@
   background-color: rgb(231, 241, 244);
 }
 
+
 .header {
   text-align: left;
   background-color: #1b226b;
@@ -151,3 +152,42 @@ a:visited {
 .home-page-header {
   margin-left: 3rem;
 }
+
+/* .all-topics-images { */
+  /* max-width: 400px; 
+  align-items: center; */
+  /* border-radius: 8px;
+  box-shadow: 10px 10px 5px #41505a; */
+
+  /* display:inline;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+  padding-left: 4rem;
+  height: 15em; */
+
+  /* display: inline-block;
+  width: 20%;
+  height: 15em;
+  padding-left: 4rem; */
+/* } */
+
+@media only screen and (min-width: 200px) {
+  .all-topics-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+  }
+  .each-topic-image {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 1.5rem;
+    border-radius: 15px;
+    list-style-type: none;
+    width: 20rem;
+    height: 15em;
+  }
+}
+
