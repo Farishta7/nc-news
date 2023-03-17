@@ -1,27 +1,25 @@
-import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getArticles } from "../utils/api";
+import { Link } from "react-router-dom";
 
-const Home = () => {
-    const [isLoading, setIsloading] = useState(true);
+
+const AllCodingArticles = () => {
     const [articles, setArticles] = useState([]);
- 
-    useEffect(() => {
-        setIsloading(true);
 
+    useEffect(() => {
         getArticles()
         .then((articlesData)=> {
-            setArticles(articlesData)
-            setIsloading(false);
+            const onlyFootballArticles = articlesData.filter((item) => {
+                return item.topic === "coding"
+            })
+            
+            setArticles(onlyFootballArticles)
         })
     }, [])
 
-    if (isLoading) return <p>Hang in there! Loading...</p>
-
     return (
-    <div>
-        <h2 className="home-page-header">Here are all articles about football, coding and cooking:</h2>
-        <p>{isLoading}</p>
+        <>
+        <p style={{margin: "3rem"}}>Here are all the coding articles:</p>
         <ul className="articles-list">
         {articles.map((item) => {
           return (
@@ -37,8 +35,8 @@ const Home = () => {
           );
         })}
         </ul>
-    </div>
+        </>
     )
   };
   
-export default Home;
+export default AllCodingArticles;

@@ -1,27 +1,26 @@
-import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getArticles } from "../utils/api";
+import { Link } from "react-router-dom";
+import { useParams } from "react-router";
 
-const Home = () => {
-    const [isLoading, setIsloading] = useState(true);
+const EachTopicArticles = () => {
     const [articles, setArticles] = useState([]);
- 
-    useEffect(() => {
-        setIsloading(true);
+    const {topic} = useParams();
 
+    useEffect(() => {
         getArticles()
         .then((articlesData)=> {
-            setArticles(articlesData)
-            setIsloading(false);
+            const allTopicArticles = articlesData.filter((item) => {
+                return item.topic === topic;
+            })
+            
+            setArticles(allTopicArticles)
         })
-    }, [])
-
-    if (isLoading) return <p>Hang in there! Loading...</p>
+    }, [topic])
 
     return (
-    <div>
-        <h2 className="home-page-header">Here are all articles about football, coding and cooking:</h2>
-        <p>{isLoading}</p>
+        <>
+        <p style={{margin: "3rem"}}>Here are all the {topic} articles:</p>
         <ul className="articles-list">
         {articles.map((item) => {
           return (
@@ -37,8 +36,8 @@ const Home = () => {
           );
         })}
         </ul>
-    </div>
+        </>
     )
   };
   
-export default Home;
+export default EachTopicArticles;

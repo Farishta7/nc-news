@@ -1,7 +1,7 @@
 .App {
-  /* text-align: center; */
   background-color: rgb(231, 241, 244);
 }
+
 
 .header {
   text-align: left;
@@ -30,8 +30,6 @@
   margin-left: auto;
   margin-right: auto;
 }
-
-
 
 @media only screen and (min-width: 200px) {
   .articles-list {
@@ -72,15 +70,6 @@
   }
 }
 
-
-/* .each-comment {
-  list-style-type: none;
-  text-align: left;
-} */
-/* .link {
-    text-decoration: none;
-} */
-
 a:link {
   text-decoration: none;
   color: inherit;
@@ -98,18 +87,12 @@ a:visited {
 }
 
 
-
 .article-title {
   width: 200px;
   list-style-type: none;
-
-
 }
 
-
-
 .comment-image {
-  /* display: inline-block; */
   border-radius: 50%;
   overflow: hidden;
   width: 50px;
@@ -151,3 +134,23 @@ a:visited {
 .home-page-header {
   margin-left: 3rem;
 }
+
+@media only screen and (min-width: 200px) {
+  .all-topics-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+  }
+  .each-topic-image {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 1.5rem;
+    border-radius: 15px;
+    list-style-type: none;
+    width: 20rem;
+    height: 15em;
+  }
+}
+

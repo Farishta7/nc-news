@@ -59,7 +59,7 @@ const SingleArticle = () => {
 
     return (
         <>
-            <h3 >{singleArticle.title}</h3>
+            <h3 style={{margin: "3rem"}}>{singleArticle.title}</h3>
             <section className="single-article-author-date">
             <img src={singleArticle.article_img_url} className="single-article-image" alt="I am an alt."/>
             
