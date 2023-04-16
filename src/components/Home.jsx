@@ -32,7 +32,7 @@ const Home = () => {
               <p className="article-title">{item.title}</p>
               </Link>
               <p>Author: {item.author}</p>
-              <p>Date posted: {new Date(item.created_at).toLocaleString().split(',')[0]}</p>
+              <p>{new Date(item.created_at).toLocaleString().split(',')[0]}</p>
             </li>
           );
         })}
