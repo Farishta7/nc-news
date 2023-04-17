@@ -16,7 +16,7 @@ const Home = () => {
         })
     }, [])
 
-    if (isLoading) return <p>Hang in there! Loading...</p>
+    if (isLoading) return <p style={{fontSize: "30px", paddingLeft: "3rem"}}>Hang in there! Loading...</p>
 
     return (
     <div>
