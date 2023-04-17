@@ -28,7 +28,7 @@ const CommentAdder = (props) => {
         <form onSubmit={handleSubmit}>
         <label htmlFor="newComment">Add a comment</label>
         <br />
-        <textarea rows="5" cols="30" id="newComment" value={newComment} onChange={(event) => setNewComment(event.target.value)}/>
+        <textarea rows="5" cols="20" id="newComment" value={newComment} onChange={(event) => setNewComment(event.target.value)}/>
         <br />
         <button type="submit" className="add-comment-button">Add my comment!</button>
         </form>
