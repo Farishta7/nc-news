@@ -3,42 +3,55 @@ import { useEffect, useState } from "react";
 import { getArticles } from "../utils/api";
 
 const Home = () => {
-    const [isLoading, setIsloading] = useState(true);
-    const [articles, setArticles] = useState([]);
- 
-    useEffect(() => {
-        setIsloading(true);
+  const [isLoading, setIsloading] = useState(true);
+  const [articles, setArticles] = useState([]);
 
-        getArticles()
-        .then((articlesData)=> {
-            setArticles(articlesData)
-            setIsloading(false);
-        })
-    }, [])
+  useEffect(() => {
+    setIsloading(true);
 
-    if (isLoading) return <p style={{fontSize: "30px", paddingLeft: "3rem"}}>Hang in there! Loading...</p>
+    getArticles().then((articlesData) => {
+      setArticles(articlesData);
+      setIsloading(false);
+    });
+  }, []);
 
+  if (isLoading)
     return (
+      <p style={{ fontSize: "30px", paddingLeft: "3rem" }}>
+        Hang in there! Loading...
+      </p>
+    );
+
+  return (
     <div>
-        <h2 className="home-page-header">Here are all articles about football, coding and cooking:</h2>
-        <p>{isLoading}</p>
-        <ul className="articles-list">
+      <h2 className="home-page-header">
+        Here are all articles about football, coding and cooking:
+      </h2>
+      <p>{isLoading}</p>
+      <ul className="articles-list">
         {articles.map((item) => {
           return (
-            <li key={item.article_id} className="each-article" >
-              <Link to={`/articles/${item.article_id}` }>
-              <img src={item.article_img_url} className="images" alt="I am an alt."/>
-              <p>{item.topic.charAt(0).toUpperCase() + item.topic.slice(1)}</p>
-              <p className="article-title">{item.title}</p>
+            <li key={item.article_id} className="each-article">
+              <Link to={`/articles/${item.article_id}`}>
+                <img
+                  src={item.article_img_url}
+                  className="images"
+                  alt="I am an alt."
+                  loading="lazy"
+                />
+                <p>
+                  {item.topic.charAt(0).toUpperCase() + item.topic.slice(1)}
+                </p>
+                <p className="article-title">{item.title}</p>
               </Link>
               <p>Author: {item.author}</p>
-              <p>{new Date(item.created_at).toLocaleString().split(',')[0]}</p>
+              <p>{new Date(item.created_at).toLocaleString().split(",")[0]}</p>
             </li>
           );
         })}
-        </ul>
+      </ul>
     </div>
-    )
-  };
-  
+  );
+};
+
 export default Home;
