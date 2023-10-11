@@ -55,7 +55,8 @@ const SingleArticle = () => {
   if (isLoading) return <p>Hang in there! Loading...</p>;
 
   return (
-    <div style={{ margin: "3rem" }}>
+    <div className="main-body">
+      <div className="body-content">
       <div className="header-and-image">
         <h3 className="single-article-header">{singleArticle.title}</h3>
         <img
@@ -88,7 +89,8 @@ const SingleArticle = () => {
       </div>
       <p className="article-body">{singleArticle.body}</p>
       <ArticleComments />
-    </div>
+      </div>
+      </div>
   );
 };
 
