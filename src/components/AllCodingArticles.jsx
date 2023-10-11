@@ -16,34 +16,55 @@ const AllCodingArticles = () => {
   }, []);
 
   return (
-    <>
-      <p style={{ margin: "3rem" }}>Here are all the coding articles:</p>
-      <ul className="articles-list">
-        {articles.map((item) => {
-          return (
-            <li key={item.article_id} className="each-article">
-              <Link to={`/articles/${item.article_id}`}>
-                <img
-                  src={item.article_img_url}
-                  className="images"
-                  alt="I am an alt."
-                  loading="lazy"
-                />
+    <div className="main-body">
+      <div className="body-content">
+        <p className="page-sub-heading">CODING</p>
+        <ul className="articles-list">
+          {articles.map((item, index) => {
+            return (
+              <li
+                key={item.article_id}
+                className={`each-article${index === 0 ? " first-article" : ""}`}
+              >
+                <Link to={`/articles/${item.article_id}`}>
+                  <div
+                    className={`grid-container${
+                      index === 0 ? " first-grid-container" : ""
+                    }`}
+                  >
+                    <img
+                      src={item.article_img_url}
+                      className={`images${index === 0 ? " first-image" : ""}`}
+                      alt="I am an alt."
+                      loading="lazy"
+                      id="images-id"
+                    />
+                    {/* <p>
+                      {item.topic.charAt(0).toUpperCase() + item.topic.slice(1)}
+                    </p> */}
+                    <p
+                      className={`article-title${
+                        index === 0 ? " first-article-title" : ""
+                      }`}
+                      id={`article-title${
+                        index === 0 ? " first-article-title" : ""
+                      }`}
+                    >
+                      {item.title}
+                    </p>
+                  </div>
+                </Link>
+                {/* <p>Author: {item.author}</p>
                 <p>
-                  {item.topic.charAt(0).toUpperCase() + item.topic.slice(1)}
-                </p>
-                <p className="article-title">{item.title}</p>
-              </Link>
-              <p>Author: {item.author}</p>
-              <p>
-                Date posted:{" "}
-                {new Date(item.created_at).toLocaleString().split(",")[0]}
-              </p>
-            </li>
-          );
-        })}
-      </ul>
-    </>
+                  Date posted:{" "}
+                  {new Date(item.created_at).toLocaleString().split(",")[0]}
+                </p> */}
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </div>
   );
 };
 
