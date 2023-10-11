@@ -23,33 +23,57 @@ const Home = () => {
     );
 
   return (
-    <div>
-      <h2 className="home-page-header">
-        Here are all articles about football, coding and cooking:
-      </h2>
-      <p>{isLoading}</p>
-      <ul className="articles-list">
-        {articles.map((item) => {
-          return (
-            <li key={item.article_id} className="each-article">
-              <Link to={`/articles/${item.article_id}`}>
-                <img
-                  src={item.article_img_url}
-                  className="images"
-                  alt="I am an alt."
-                  loading="lazy"
-                />
+    <div className="main-body">
+      <div className="body-content">
+        <p className="page-sub-heading">ALL ARTICLES</p>
+        <p>{isLoading}</p>
+        <ul className="articles-list">
+          {articles.map((item, index) => {
+            return (
+              <li
+                key={item.article_id}
+                className={`each-article${index === 0 ? " first-article" : ""}`}
+              >
+                <Link to={`/articles/${item.article_id}`}>
+                  <div
+                    className={`grid-container${
+                      index === 0 ? " first-grid-container" : ""
+                    }`}
+                  >
+                    <img
+                      src={item.article_img_url}
+                      className={`images${index === 0 ? " first-image" : ""}`}
+                      alt="I am an alt."
+                      loading="lazy"
+                      id="images-id"
+                    />
+                    <p
+                      className={`article-title${
+                        index === 0 ? " first-article-title" : ""
+                      }`}
+                      id={`article-title${
+                        index === 0 ? " first-article-title" : ""
+                      }`}
+                    >
+                      {item.title}
+                    </p>
+                  </div>
+                </Link>
+                {/* <p>Author: {item.author}</p>
+                <p>
+                  {new Date(item.created_at).toLocaleString().split(",")[0]}
+                </p>
                 <p>
                   {item.topic.charAt(0).toUpperCase() + item.topic.slice(1)}
-                </p>
-                <p className="article-title">{item.title}</p>
-              </Link>
-              <p>Author: {item.author}</p>
-              <p>{new Date(item.created_at).toLocaleString().split(",")[0]}</p>
-            </li>
-          );
-        })}
-      </ul>
+                </p> */}
+              </li>
+            );
+          })}
+          {/* <li className="each-article empty-article-dummy">
+            
+          </li> */}
+        </ul>
+      </div>
     </div>
   );
 };
