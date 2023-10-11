@@ -36,6 +36,10 @@ body {
   z-index: 9999;
 }
 
+#newComment {
+  padding: 0.8rem;
+}
+
 .header-content {
   padding: 0px 2rem;
   margin: 0px auto;
