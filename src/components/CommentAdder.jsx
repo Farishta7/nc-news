@@ -22,9 +22,9 @@ const CommentAdder = (props) => {
   };
 
   return (
-    <div class="comment-section">
+    <div className="comment-section">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="newComment">Add a comment</label>
+        {/* <label htmlFor="newComment">Add a comment</label> */}
         <br />
         <textarea
           style={{ marginTop: "10px", marginBottom: "10px" }}
@@ -32,6 +32,9 @@ const CommentAdder = (props) => {
           value={newComment}
           required
           onChange={(event) => setNewComment(event.target.value)}
+          rows={3}
+          cols={35}
+          placeholder="I think this article was ..."
         />
         <br />
         <button type="submit" className="add-comment-button">
