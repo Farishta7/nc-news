@@ -16,7 +16,7 @@ const ArticleComments = () => {
   return (
     <>
       <section className="comment-adder-section">
-        <h4 style={{ fontSize: "25px" }}>Comments</h4>
+        {/* <h4 style={{ fontSize: "25px" }}>Comments Section</h4> */}
         <CommentAdder article_id={article_id} setComments={setComments} />
       </section>
 
