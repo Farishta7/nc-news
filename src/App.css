@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   padding: 0;
@@ -32,6 +33,7 @@ body {
   color: #656565;
   margin: 0px auto;
   width: 100%;
+  z-index: 9999;
 }
 
 .header-content {
@@ -122,6 +124,16 @@ li {
   color: #555b60;
 }
 
+#single-article-main-body {
+  padding-top: 16rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  color: #555b60;
+  background-color: #ffffff;
+}
+
 .body-content {
   padding: 0px 2rem;
   margin: 0px auto;
@@ -152,22 +164,86 @@ li {
 }
 
 .single-article-header {
-  font-size: 30px;
+  font-size: 50px;
   display: block;
 }
 
 
 .single-article-image {
-  width: 950px;
+  /* width: 950px;
   border-radius: 6px;
   max-width: 100%;
-  max-height: 100%;
+  max-height: 100%; */
+
+  width: 100%;
+  object-fit: cover;
 }
 
 .header-and-image {
-  vertical-align: top;
+  /* vertical-align: top;
   display: inline-block;
+  text-align: center; */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  width: 100%;
+}
+
+.single-article-author, .single-article-time {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* width: 100%; */
+  padding-top: 1rem;
+  padding-bottom: 1.5rem;
+
+}
+
+.hithere {
+  animation: hithere 1s ease infinite;
+}
+@keyframes hithere {
+  30% { transform: scale(1); }
+  40%, 60% { transform: rotate(-7deg) scale(1.05); }
+  50% { transform: rotate(7deg) scale(1.05); }
+  70% { transform: rotate(0deg) scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.thumbs {
+  width: 30px;
+}
+
+.author-name {
+  margin: 0px;
+  color: #4a53ba;
+  font-weight: bold;
+}
+
+.author-company-name {
+  margin: 0px;
+}
+
+.author-and-company {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+}
+
+.author-icon, .article-time-icon {
+  padding-right: 1rem;
+}
+
+.author-icon {
+  width: 8rem;
+}
+
+.single-article-author > p, .single-article-time > p {
+  padding: 0px;
+  margin: 0px;
 }
 
 .author-and-date {
@@ -183,8 +259,9 @@ li {
 }
 
 .article-body {
-  font-size: 19px;
-  max-width: 50rem;
+  padding-top: 2rem;
+  font-size: 20px;
+  width: 100%;
 }
 
 .articles-list>li:first-child {
@@ -308,6 +385,10 @@ li {
   /* .articles-list>li:first-child>a>.grid-container>#article-title {
     font-size: 150%;
   } */
+
+  .single-article-header {
+    font-size: 35px;
+  }
 }
 
 @media only screen and (max-width: 659px) {
