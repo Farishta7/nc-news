@@ -17,7 +17,6 @@ body {
   background-image: radial-gradient(rgb(255, 255, 255), rgb(232, 234, 232), rgb(198, 198, 201));
   min-height: 100vh;
   font-family: "Sky Headline", "Sky Headline fallback", "arial narrow", sans-serif;
-
 }
 
 /* HEADER - START */
@@ -36,9 +35,12 @@ body {
   z-index: 9999;
 }
 
+.is-loading-div {
+  text-align: center;
+}
+
 .isLoading-text{
   padding-top: 20rem;
-  padding-left: 7rem;
   color:#41505a;
 }
 
