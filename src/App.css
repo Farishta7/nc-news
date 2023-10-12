@@ -36,6 +36,12 @@ body {
   z-index: 9999;
 }
 
+.isLoading-text{
+  padding-top: 20rem;
+  padding-left: 7rem;
+  color:#41505a;
+}
+
 #newComment {
   padding: 0.8rem;
 }
@@ -52,7 +58,7 @@ body {
   color: rgb(48, 48, 126);
   margin: 0px;
   font-weight: bolder;
-  font-size: 4.2rem;
+  font-size: 4rem;
 }
 
 .logo-and-sign-in {
