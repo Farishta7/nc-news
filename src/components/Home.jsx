@@ -16,7 +16,7 @@ const Home = () => {
   }, []);
 
   if (isLoading) {
-    return <p className="page-sub-heading isLoading-text">Hang in there! Loading...</p>;
+    return <div className="is-loading-div"><p className="page-sub-heading isLoading-text">Hang in there! Loading...</p></div>;
   }
 
   return (
