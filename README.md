@@ -1,6 +1,13 @@
 # 'News Wave' React Project
 
-A project built to display news articles and comments. 
+A project built to display news articles and comments.
+
+Features:
+* Display and view articles
+* View articles of different topics
+* "Thumbs up" or "thumbs down" an article (apdates database)
+* View comments
+* Write your own comment and post to a specific article
 
 ## Available Scripts
 
